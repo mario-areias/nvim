@@ -22,3 +22,6 @@ require("lazy").setup("plugins")
 
 -- Keymaps
 require("keymaps")
+
+
+-- TODO: debugging, completitions, copilot, more catppuccin
