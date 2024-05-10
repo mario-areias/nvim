@@ -15,5 +15,7 @@ return {
         -- follow_current_file = true,
       }
     }
+
+    vim.keymap.set('n', '<leader>tf', [[:Neotree toggle<CR>]], { desc = '[T]oggle [F]iletree' })
   end,
 }
