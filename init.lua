@@ -22,7 +22,3 @@ require("lazy").setup("plugins")
 
 -- Keymaps
 require("keymaps")
-
-
-
-

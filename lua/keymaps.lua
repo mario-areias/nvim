@@ -26,3 +26,12 @@ vim.keymap.set("n", "<leader>gb", [[:Git blame<CR>]])
 
 -- opens file in Github
 vim.keymap.set("n", "<leader>gh", [[:GBrowse<CR>]])
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- format
+vim.keymap.set('n', '<leader>bf', vim.lsp.buf.format, { desc = 'Format buffer' })
