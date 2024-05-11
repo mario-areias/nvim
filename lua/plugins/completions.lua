@@ -13,7 +13,7 @@ return {
     "hrsh7th/nvim-cmp",
     config = function()
       local cmp = require("cmp")
-      local luasnip = require ("luasnip")
+      local luasnip = require("luasnip")
       require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
@@ -56,6 +56,7 @@ return {
           end, { 'i', 's' }),
         }),
         sources = cmp.config.sources({
+          { name = "copilot" },
           { name = "nvim_lsp" },
           { name = "luasnip" }, -- For luasnip users.
         }, {
