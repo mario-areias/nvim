@@ -23,4 +23,4 @@ require("lazy").setup("plugins")
 -- Keymaps
 require("keymaps")
 
--- TODO: debugging, more catppuccin, obsidian
+-- TODO: mini, obsidian

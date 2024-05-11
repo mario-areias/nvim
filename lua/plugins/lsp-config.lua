@@ -96,7 +96,11 @@ return {
     "j-hui/fidget.nvim",
     tag = "v1.0.0",
     opts = {
-      -- options
+      notification = {
+        window = {
+          winblend = 0,
+        },
+      }
     },
   },
   {
