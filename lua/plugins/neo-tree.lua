@@ -12,7 +12,10 @@ return {
 				follow_current_file = {
 					enabled = true,
 				},
-				-- follow_current_file = true,
+				filtered_items = {
+					hide_dotfiles = false,
+					hide_by_pattern = { ".git", "node_modules", ".cache" },
+				},
 			},
 		})
 
