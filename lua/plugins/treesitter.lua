@@ -10,6 +10,7 @@ return {
 			config.setup({
 				-- Add languages to be installed here that you want installed for treesitter
 				ensure_installed = {
+					"bash",
 					"c",
 					"cpp",
 					"go",
@@ -17,7 +18,10 @@ return {
 					"gosum",
 					"kdl",
 					"lua",
+					"markdown",
+					"markdown_inline",
 					"python",
+					"regex",
 					"rust",
 					"tsx",
 					"typescript",
