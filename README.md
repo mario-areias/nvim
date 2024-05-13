@@ -6,7 +6,7 @@ This is my personal nvim configuration. I have used [kickstart](https://github.c
 
 ## Plugins
 
-For this new phase of my config, I wanted to have better asthetics, modularity and - most importantly - control of my own environment. For that reason, I avoided things such as `mini.nvim` or using distros. Which these tools are quite amazing in their own right, I wanted to have more control of my config not less.
+For this new phase of my config, I wanted to have better asthetics, modularity and - most importantly - control of my own environment. For that reason, I avoided things such as `mini.nvim` or using distros. While these tools are quite amazing in their own right, I wanted to have more control of my config not less.
 
 
 ### Asthetics
