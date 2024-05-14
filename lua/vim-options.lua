@@ -54,6 +54,8 @@ vim.lsp.set_log_level("off")
 
 -- split vertical right
 vim.o.splitright = true
+-- split horizontal bottom
+vim.o.splitbelow = true
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
