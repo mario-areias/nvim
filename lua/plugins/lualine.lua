@@ -21,6 +21,7 @@ return {
 			},
 			-- add sectin for macro recording:
 			-- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#show-recording-messages
+			-- https://www.reddit.com/r/neovim/comments/xy0tu1/comment/irfegvd/
 			sections = {
 				lualine_x = {
 					{ "show_macro_recording", fmt = show_macro_recording },
