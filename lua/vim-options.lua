@@ -46,7 +46,6 @@ vim.wo.signcolumn = "yes"
 vim.o.updatetime = 250
 
 -- Set completeopt to have a better completion experience
--- TODO: consider remove it
 vim.o.completeopt = "menuone,noselect"
 
 -- Disable LSP log
