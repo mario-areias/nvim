@@ -1,13 +1,3 @@
-local function show_macro_recording()
-	local recording_register = vim.fn.reg_recording()
-
-	if recording_register == "" then
-		return ""
-	else
-		return "Recording @" .. recording_register
-	end
-end
-
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -21,10 +11,13 @@ return {
 			},
 			-- add section for macro recording:
 			-- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#show-recording-messages
-			-- https://www.reddit.com/r/neovim/comments/xy0tu1/comment/irfegvd/
 			sections = {
 				lualine_x = {
-					{ "show_macro_recording", fmt = show_macro_recording },
+					{
+						require("noice").api.statusline.mode.get,
+						cond = require("noice").api.statusline.mode.has,
+						color = { fg = "#ff9e64" },
+					},
 					-- these 3 are the default sections
 					"encoding",
 					"fileformat",
