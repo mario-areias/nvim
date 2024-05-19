@@ -15,7 +15,9 @@ return {
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require("telescope").setup({
+			local telescope = require("telescope")
+
+			telescope.setup({
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({}),
@@ -25,7 +27,7 @@ return {
 
 			local builtin = require("telescope.builtin")
 			-- Enable telescope fzf native, if installed
-			pcall(require("telescope").load_extension, "fzf")
+			pcall(telescope.load_extension, "fzf")
 
 			-- See `:help telescope.builtin`
 			vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
@@ -45,11 +47,14 @@ return {
 			vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 			vim.keymap.set("n", "<leader>sn", ":Telescope notify<CR>", { desc = "[S]earch [N]otifications" })
-			vim.keymap.set("n", "<leader>sy", function()
-				require("telescope").extensions.yank_history.yank_history()
-			end, { desc = "[S]earch [Y]anks" })
+			vim.keymap.set(
+				"n",
+				"<leader>sy",
+				telescope.extensions.yank_history.yank_history,
+				{ desc = "[S]earch [Y]anks" }
+			)
 
-			require("telescope").load_extension("ui-select")
+			telescope.load_extension("ui-select")
 		end,
 	},
 }
