@@ -62,3 +62,8 @@ vim.wo.cursorline = true
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Disable messages such as -- INSERT -- in the command line
+-- lualine already shows the mode
+-- See `:help 'showmode'`
+vim.o.showmode = false
