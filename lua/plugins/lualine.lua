@@ -19,7 +19,7 @@ return {
 					statusline = 200, -- Note these are in mili second and default is 1000
 				},
 			},
-			-- add sectin for macro recording:
+			-- add section for macro recording:
 			-- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#show-recording-messages
 			-- https://www.reddit.com/r/neovim/comments/xy0tu1/comment/irfegvd/
 			sections = {
