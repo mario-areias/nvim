@@ -35,11 +35,12 @@ return {
 					["<C-Space>"] = cmp.mapping.complete({}),
 					["<CR>"] = cmp.mapping.confirm({
 						behavior = cmp.ConfirmBehavior.Replace,
-						select = true,
+						select = false, -- do not select automatically
 					}),
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
-							cmp.select_next_item()
+							-- :h cmp.select_next_item
+							cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 						elseif luasnip.expand_or_locally_jumpable() then
 							luasnip.expand_or_jump()
 						else
@@ -48,7 +49,8 @@ return {
 					end, { "i", "s" }),
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
-							cmp.select_prev_item()
+							-- :h cmp.select_prev_item
+							cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
 						elseif luasnip.locally_jumpable(-1) then
 							luasnip.jump(-1)
 						else
