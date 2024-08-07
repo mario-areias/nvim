@@ -1,6 +1,15 @@
 local servers = {
 	-- clangd = {},
-	gopls = {},
+	gopls = {
+		hints = {
+			assignVariableTypes = true,
+			compositeLiteralFields = true,
+			compositeLiteralTypes = true,
+			constantValues = true,
+			parameterNames = true,
+			rangeVariableTypes = true,
+		},
+	},
 	-- pyright = {},
 	rust_analyzer = {
 		["rust-analyzer"] = {
@@ -19,6 +28,7 @@ local servers = {
 		Lua = {
 			workspace = { checkThirdParty = false },
 			telemetry = { enable = false },
+			hint = { enable = true },
 		},
 	},
 }
@@ -44,11 +54,6 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 	nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
-	-- See `:help K` for why this keymap
-	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-	-- This conflicst with the zellij nav plugin
-	-- nmap("<C-K>", vim.lsp.buf.signature_help, "Signature Documentation")
-
 	-- Lesser used LSP functionality
 	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 	nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
@@ -56,6 +61,12 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>wl", function()
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
+
+	vim.lsp.inlay_hint.enable(true)
+	nmap("<leader>ht", function()
+		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+		vim.notify("Inlay hints " .. (vim.lsp.inlay_hint.is_enabled() and "enabled" or "disabled"))
+	end, "Inlay [H]ints Toggle")
 
 	-- Create a command `:Format` local to the LSP buffer
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
