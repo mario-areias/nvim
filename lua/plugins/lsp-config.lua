@@ -19,7 +19,7 @@ local servers = {
 			},
 		},
 	},
-	tsserver = {},
+	ts_ls = {},
 	terraformls = {},
 	jsonls = {},
 	yamlls = {},
