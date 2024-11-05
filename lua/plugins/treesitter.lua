@@ -16,6 +16,7 @@ return {
 					"go",
 					"gomod",
 					"gosum",
+					"javascript",
 					"kdl",
 					"lua",
 					"markdown",

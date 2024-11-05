@@ -59,6 +59,9 @@ vim.o.splitbelow = true
 -- highlight cursor line
 vim.wo.cursorline = true
 
+-- set noeol
+vim.o.eol = false
+
 -- Disable messages such as -- INSERT -- in the command line
 -- lualine already shows the mode
 -- See `:help 'showmode'`
